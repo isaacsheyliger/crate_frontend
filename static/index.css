@@ -1,0 +1,176 @@
+@import url("https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css");
+html {
+  background-color: #151515;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body, p {
+  color: #e1e1e1;
+  font-family: "Glass TTY VT220";
+}
+
+#root {
+  max-width: 100%;
+}
+
+.footer {
+  background-color: #0a0a0a;
+  bottom: 0;
+}
+
+.title, .subtitle {
+  color: inherit;
+}
+
+.article-list {
+  position: absolute;
+  display: flex;
+  height: 500px;
+  left: 10rem;
+  width: 90%;
+  transition: 0.5s;
+}
+.article-list .media:first-child {
+  position: relative;
+  left: calc(100% - 400px - 10rem);
+  right: 7rem;
+  animation: moveLastFirst 0.5s, moveFirstLast 0.5s;
+}
+.article-list .media:not(:first-child) {
+  position: relative;
+  margin-left: -410px;
+}
+.article-list .media:last-child {
+  animation: moveFirstNext 0.5s, moveNextFirst 0.5s;
+}
+.article-list .media + .media {
+  border-top: 0px;
+  margin-top: 0rem;
+  padding-top: 0rem;
+}
+@keyframes moveLastFirst {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes moveFirstNext {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes moveFirstLast {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes moveNextFirst {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.article-header {
+  padding-top: 0;
+}
+
+.art-hero {
+  margin-bottom: 5rem;
+}
+
+.navbar {
+  width: 100%;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: center;
+}
+.card-buttons button {
+  margin: 2rem;
+  background-color: #151515;
+  border-color: #959595;
+  color: #959595;
+}
+.card-buttons button:hover, .card-buttons button:focus {
+  border-color: #4AF626;
+  color: #4AF626;
+  transition: 0.1s;
+}
+
+.hero {
+  padding: 10rem 5rem 0 5rem;
+  max-width: 100%;
+}
+
+.hero-body {
+  padding-bottom: 0;
+  height: fit-content;
+}
+
+.card-footer {
+  border: none;
+  position: absolute;
+  bottom: 0;
+  padding-left: 0.5rem;
+}
+
+.card, .card-footer-item {
+  background-color: transparent;
+  color: transparent;
+}
+
+.card:hover {
+  background: #0a0a0a;
+  opacity: 75%;
+  color: white;
+  transition: all 0.1s ease-in;
+}
+.card:hover .card-footer-item {
+  color: white;
+  transition: all 0.1s ease-in;
+}
+
+.column {
+  display: flex;
+  justify-content: center;
+}
+
+.article-body {
+  margin: 1rem 15rem 5rem 7rem;
+  font-size: 16pt;
+}
+
+.archivebody, .homebody {
+  margin-bottom: 5rem;
+}
+
+#article-title {
+  font-size: 36pt;
+}
+
+#article-sub {
+  font-size: 18pt;
+}
+
+#article-date {
+  font-size: 14pt;
+}
+
+/*# sourceMappingURL=index.css.map */
