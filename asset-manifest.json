@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/crate_frontend/static/css/main.243ec75b.css",
+    "main.js": "/crate_frontend/static/js/main.73d0bd11.js",
+    "static/js/496.f1ee7cd7.chunk.js": "/crate_frontend/static/js/496.f1ee7cd7.chunk.js",
+    "index.html": "/crate_frontend/index.html",
+    "main.243ec75b.css.map": "/crate_frontend/static/css/main.243ec75b.css.map",
+    "main.73d0bd11.js.map": "/crate_frontend/static/js/main.73d0bd11.js.map",
+    "496.f1ee7cd7.chunk.js.map": "/crate_frontend/static/js/496.f1ee7cd7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.243ec75b.css",
+    "static/js/main.73d0bd11.js"
+  ]
+}
