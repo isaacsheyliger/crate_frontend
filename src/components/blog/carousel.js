@@ -22,6 +22,7 @@ export default function Carousel(props) {
     const [articles, setArticles] = useState([]);
     const [width, height] = useWindowSize();
 
+    // TODO: replace article fetch with json data from album-data.json in public/static/
     const FetchArticle = async () => {
         await fetch(`${URL}/articles/`, {
             method: 'GET',

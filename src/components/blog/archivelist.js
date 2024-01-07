@@ -7,6 +7,7 @@ const URL = config.blog_api
 function ArchiveList(props) {
     const [articles, setArticles] = useState([]);
 
+    // TODO: replace article fetch with json data from file for static page
     const FetchArticle = async () => {
         await fetch(`${URL}/articles/`, {
             method: 'GET',
