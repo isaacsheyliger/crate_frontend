@@ -16,7 +16,7 @@ $ npm install
 # Development - How to develop for an existing issue
 Be sure to checkout the proper branch for the issue you're working
 ```bash
-$ git checkout 'branch'
+$ git checkout <branch>
 ```
 
 To start the development server run:
