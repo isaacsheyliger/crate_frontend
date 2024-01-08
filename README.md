@@ -37,7 +37,7 @@ Submit a pull request across forks to the corresponding branch
 # Documentation
 This project was built using:
 
-[React](https://react.dev/reference/react)
-[React Router](https://reactrouter.com/en/main)
-[DOMPurify](https://github.com/cure53/DOMPurify)
-[Bulma CSS](https://bulma.io/documentation/)
+[React](https://react.dev/reference/react)\
+[React Router](https://reactrouter.com/en/main)\
+[DOMPurify](https://github.com/cure53/DOMPurify)\
+[Bulma CSS](https://bulma.io/documentation/)\
