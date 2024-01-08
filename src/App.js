@@ -8,14 +8,14 @@ import BlogRoutes from './components/blog/routes.js';
 
 function App(props) {
   return (
-    <BrowserRouter>
+    <HashRouter>
         <Nav />
         <Routes>
               <Route path='#/blog' element={<BlogRoutes />}/>
               {/* <Route path='#/dig' element={<DigRoutes />}/> */}
         </Routes>
         <Footer />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
