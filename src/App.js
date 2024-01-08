@@ -7,11 +7,13 @@ import BlogRoutes from './components/blog/routes.js';
 //import './static/css';
 
 // Route to blog automatically
-url = window.location.href
+let url = window.location.href;
 
-if (url.indexOf('#') = -1) {
+if (url.indexOf('#') == -1) {
   url += '#/blog/'
 }
+
+window.location.href = url;
 
 function App(props) {
   return (
