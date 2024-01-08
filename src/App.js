@@ -21,7 +21,7 @@ function App(props) {
         <Routes>
           {/* <Route path='/login' element={<Login />}/> */}
               <Route path='/blog' element={<BlogRoutes />}/>
-              <Route path='/dig' element={<DigRoutes />}/>
+              {/* <Route path='/dig' element={<DigRoutes />}/> */}
             {/* need route for django admin? */}
         </Routes>
         <Footer />
