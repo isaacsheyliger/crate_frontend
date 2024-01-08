@@ -1,6 +1,8 @@
 # Welcome
 Welcome! This is the repository for the frontend of the [crate.digital](https://www.crate.digital) website. New features will be worked on and demoed here before going live on the site, so consider this a bit of a sneak peek into the work in progress. 
 
+View the demo [here](https://heyligerjon.github.io/crate_frontend/)
+
 # Setup
 To get started, create a new fork of this repo and clone the fork to your computer
 ```bash
