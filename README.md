@@ -29,7 +29,7 @@ Commit and push changes to your fork
 ```bash
 $ git add .
 $ git commit -m 'commit message'
-$ git push origin 'branch'
+$ git push origin <branch>
 ```
 
 Submit a pull request across forks to the corresponding branch
