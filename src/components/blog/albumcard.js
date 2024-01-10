@@ -19,11 +19,13 @@ function AlbumCard({ article, orientation, width }) {
         cardClass += ` flex-col`
     }
 
+    const urlTitle = title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
+
     return (
         <>
             {orientation === 'card' && (
                 <article className={`media${cardClass}`} style={{backgroundImage: `url('/static/img/covers/${cover}')`, backgroundSize: width_px, maxWidth: width_px, width: width_px, height: width_px}}>
-                    <Link to={`/articles/${article.id}`} state={{article: article}} element={<Article/>}>
+                    <Link to={`/articles/${urlTitle}`} state={{article: article}} element={<Article/>}>
                             <div className="card" style={{width: width_px, height: width_px}}>
                                 <div className="card-content">
                                     <p className="title card-title">
