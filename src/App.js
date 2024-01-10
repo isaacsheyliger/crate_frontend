@@ -1,9 +1,13 @@
 import React from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Nav from './components/nav.js'
 import Footer from './components/footer.js';
-import DigRoutes from './components/digger/routes.js';
-import BlogRoutes from './components/blog/routes.js';
+import Home from "./components/blog/home.js"
+import ArchiveList from './components/blog/archivelist.js';
+import Article from './components/blog/article.js';
+import Login from './components/digger/login.js';
+import Dig from './components/digger/dig.js';
+import Error from './components/error.js';
 //import './static/css';
 
 // Route to blog automatically
@@ -20,8 +24,16 @@ function App(props) {
     <HashRouter basename=''>
         <Nav />
         <Routes>
-              <Route path='/blog' element={<BlogRoutes />}/>
-              {/* <Route path='#/dig' element={<DigRoutes />}/> */}
+              {/* blog routes */}
+              <Route exact path='/blog/' element={<Home />} />
+              <Route exact path='/blog/archive' element={<ArchiveList />} />
+              <Route exact path='/blog/articles/:id' element={<Article />} />
+              <Route path='/blog/*' element={<Error code={404} />}/>
+              {/* dig routes */}
+              <Route exact path='/dig/' element={<Navigate to='/dig/login' />} />
+              <Route exact path='/dig/login/' element={<Login />} />
+              <Route exact path='/dig/home/' element={<Dig />} />
+              <Route path='/dig/*' element={<Error code={404} />} />
         </Routes>
         <Footer />
     </HashRouter>
