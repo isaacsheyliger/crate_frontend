@@ -27,6 +27,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+input {
+  font-family: 'GlassTTY', monospace, serif;
+  line-height: 1.5;
+  color: #4AF626;
+  background-color: #151515;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 h1 {
   color: #4AF626;
   padding-bottom: 2rem;
@@ -38,6 +47,37 @@ code {
     monospace;
   background-color: #0a0a0a;
   color: #e1e1e1;
+}
+
+pre, code {
+    font-family: 'GlassTTY', monospace, serif;
+    background-color: #151515;
+    color: #4AF626;
+    margin: .5rem 0 0;
+}
+
+pre.caret-block {
+  margin-top: 0;
+}
+
+pre.caret-block > span {
+    background-color: #4AF626;
+    color: #000;
+}
+
+progress[value]::-webkit-progress-bar {
+    background-color: #151515;
+}
+
+progress[value]::-webkit-progress-value {
+    position: relative;
+    
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
+progress[value]::-moz-progress-bar {
+    /* Gradient background with Stripes */
+    background-color: #4AF626;
 }
 
 a, strong, em, blockquote, p, ol, ul, li{

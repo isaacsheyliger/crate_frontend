@@ -10,7 +10,7 @@ function BlogRoutes(props) {
     <Routes>
         <Route exact path='/' element={<Home />} />
         <Route exact path='/archive' element={<ArchiveList />} />
-        <Route path='/articles/:id' element={<Article />} />
+        <Route exact path='/articles/:title' element={<Article />} />
         <Route path='/*' element={<Error code={404} />}/>
     </Routes>
   );

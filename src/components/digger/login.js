@@ -65,7 +65,7 @@ export default function Login(props) {
         <div class="container">
             <h4>&lt;welcome to crate.digital&gt;</h4>
             { !showLoad ? <button id="login" href="" onClick={showLoadOnClick}>
-                <pre class="caret-block">log in with Spotify<span></span></pre>
+                <pre class="caret-block">log in with Spotify<span> </span></pre>
             </button> : null}
             { showLoad ? <div id="progress-container">
                 <div id="messages">
