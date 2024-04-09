@@ -46,7 +46,7 @@ function AlbumCard({ article, orientation, width }) {
             )}
             {orientation === 'vertical' && (
                 <article className={`media${cardClass}`}>
-                    <Link to={`/articles/${article.id}`} state={{article: article}} element={<Article/>}>
+                    <Link to={`./articles/${urlTitle}`} state={{article: article}} element={<Article/>}>
                             <div className="card" style={{backgroundImage: `url('/static/img/covers/${cover}')`, backgroundSize: width_px, maxWidth: width_px, width: width_px, height: width_px}}>
                             </div>
                             <div className="media-content">

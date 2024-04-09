@@ -22,7 +22,7 @@ function Article(props) {
                     <div className="columns is-multiline">
                         <div className="column is-one-half">
                             <div className="card" style={{width: '300px', height: '300px'}}>
-                                <img src={`/static/img/covers/${cover}`} alt=""/>
+                                <img src={`https://heyligerjon.github.io/crate_frontend/static/img/covers/${cover}`} alt=""/>
                             </div>
                         </div>
                         <div className="column is-one-half" style={{flexDirection: 'column'}}>

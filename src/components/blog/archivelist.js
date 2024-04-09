@@ -1,24 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { config } from '../../const/constants'
 import AlbumCard from "./albumcard";
+import article_data from './album-data.json'
 
 const URL = config.blog_api
 
 function ArchiveList(props) {
     const [articles, setArticles] = useState([]);
 
-    const FetchArticle = async () => {
-        await fetch(`${URL}/articles/`, {
-            method: 'GET',
-        })
-          .then((response) => response.json())
-          .then((result) => {
-            if (result.error) {
-              console.log('Error:', result.error);
-              return false;
-            }
-            setArticles(result);
-          });
+    // TODO: replace article fetch with json data from file for static page
+    const FetchArticle = () => {
+        setArticles(article_data);
     };
 
     useEffect(() => {

@@ -1,47 +1,42 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Nav from './components/nav.js'
 import Footer from './components/footer.js';
-import DigRoutes from './components/digger/routes.js';
-import BlogRoutes from './components/blog/routes.js';
-import { config } from './const/constants.js';
+import Home from "./components/blog/home.js"
+import ArchiveList from './components/blog/archivelist.js';
+import Article from './components/blog/article.js';
+import Login from './components/digger/login.js';
+import Dig from './components/digger/dig.js';
+import Error from './components/error.js';
 //import './static/css';
 
-const BLOG_URL = config.blog_url
-let host = window.location.host;
-// let protocol = window.location.protocol;
-let parts = host.split(".");
-let subdomain = "";
-// If we get more than 3 parts, then we have a subdomain
-// INFO: This could be 4, if you have a co.uk TLD or something like that.
-if (parts.length >= 3) {
-  subdomain = parts[0];
-  // Remove the subdomain from the parts list
-  // parts.splice(0, 1);
-  // Set the location to the new url
+// Route to blog automatically
+let url = window.location.href;
+
+if (url.indexOf('#') == -1) {
+  url += '#/blog/'
 }
 
-// blog redirect - uncomment to route all traffic to blog
-if (subdomain === '') {
-  window.location = BLOG_URL;
-}
+window.location.href = url;
 
 function App(props) {
   return (
-    <BrowserRouter>
+    <HashRouter basename=''>
         <Nav />
         <Routes>
-          {/* <Route path='/login' element={<Login />}/> */}
-            {subdomain === 'blog' &&
-              <Route path='/*' element={<BlogRoutes />}/>
-            }
-            {subdomain === '' &&
-              <Route path='/*' element={<DigRoutes />}/>
-            }
-            {/* need route for django admin? */}
+              {/* blog routes */}
+              <Route exact path='/blog/' element={<Home />} />
+              <Route exact path='/blog/archive' element={<ArchiveList />} />
+              <Route exact path='/blog/articles/:title' element={<Article />} />
+              <Route path='/blog/*' element={<Error code={404} />}/>
+              {/* dig routes */}
+              <Route exact path='/dig/' element={<Navigate to='/dig/login' />} />
+              <Route exact path='/dig/login/' element={<Login />} />
+              <Route exact path='/dig/home/' element={<Dig />} />
+              <Route path='/dig/*' element={<Error code={404} />} />
         </Routes>
         <Footer />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
