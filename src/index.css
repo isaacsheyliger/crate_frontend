@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'GlassTTY';
-  src: url("http://localhost:3000/crate_frontend/public/static/fonts/Glass_TTY_VT220.ttf"),
+  src: url("/public/static/fonts/Glass_TTY_VT220.ttf"),
       url("https://heyligerjon.github.io/crate_frontend/static/fonts/Glass_TTY_VT220.ttf"),
       url("https://www.crate.digital/static/fonts/Glass_TTY_VT220.ttf");
 }
