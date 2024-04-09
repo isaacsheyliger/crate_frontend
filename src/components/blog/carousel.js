@@ -23,8 +23,10 @@ export default function Carousel(props) {
     const [articles, setArticles] = useState([]);
     const [width, height] = useWindowSize();
 
-    const FetchArticle = () => {
-        setArticles(article_data)
+    const FetchArticle = () => {        
+	fetch(`${URL}/blog/articles/`, {
+            method: 'GET',
+        })
     };
 
     useEffect(() => {

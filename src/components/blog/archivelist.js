@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { config } from '../../const/constants'
+import { config } from '../../const/constants';
 import AlbumCard from "./albumcard";
-import article_data from './album-data.json'
+import article_data from './album-data.json';
 
 const URL = config.blog_api
 
@@ -10,7 +10,9 @@ function ArchiveList(props) {
 
     // TODO: replace article fetch with json data from file for static page
     const FetchArticle = () => {
-        setArticles(article_data);
+	fetch(`${URL}/blog/articles/`, {
+            method: 'GET',
+        })
     };
 
     useEffect(() => {
