@@ -23,7 +23,7 @@ export default function Carousel(props) {
     const windowSize = useWindowSize();
 
     const FetchArticle = () => {        
-	fetch(`${URL}/blog/articles/`, {
+	fetch(`${URL}/articles/`, {
             method: 'GET',
         })
 	.then(response => response.json())

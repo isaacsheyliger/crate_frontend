@@ -9,7 +9,7 @@ function ArchiveList(props) {
 
     // TODO: replace article fetch with json data from file for static page
     const FetchArticle = () => {
-	fetch(`${URL}/blog/articles/`, {
+	fetch(`${URL}/articles/`, {
             method: 'GET',
         })
 	.then(response => response.json())
