@@ -24,8 +24,8 @@ function AlbumCard({ article, orientation, width }) {
     return (
         <>
             {orientation === 'card' && (
-                <article className={`media${cardClass}`} style={{backgroundImage: `url('https://heyligerjon.github.io/crate_frontend/static/img/covers/${cover}')`, backgroundSize: width_px, maxWidth: width_px, width: width_px, height: width_px}}>
-                    <Link to={`./articles/${urlTitle}`} state={{article: article}} element={<Article/>}>
+                <article className={`media${cardClass}`} style={{backgroundImage: `url('/static/img/covers/${cover}')`, backgroundSize: width_px, maxWidth: width_px, width: width_px, height: width_px}}>
+                    <Link to={`/articles/${urlTitle}`} state={{article: article}} element={<Article/>}>
                             <div className="card" style={{width: width_px, height: width_px}}>
                                 <div className="card-content">
                                     <p className="title card-title">
