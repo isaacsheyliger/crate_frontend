@@ -20,13 +20,13 @@ function useWindowSize() {
 export default function Carousel(props) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [articles, setArticles] = useState([]);
-    const [width, height] = useWindowSize();
+    const windowSize = useWindowSize();
 
     const FetchArticle = () => {        
 	fetch(`${URL}/blog/articles/`, {
             method: 'GET',
         })
-	.then(response => response.json());
+	.then(response => response.json())
 	.then((result) => {
 	    if (result.error) {
   	        console.log('Error: ', result.error);
@@ -83,7 +83,7 @@ export default function Carousel(props) {
 
     var articleList;
 
-    if (width > 768) {
+    if (windowSize.width > 768) {
         articleList = articles.map((article, index) => 
             <div 
             key={index} 

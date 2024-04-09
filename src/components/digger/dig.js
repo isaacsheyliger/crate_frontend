@@ -2,30 +2,6 @@ import { useCallback, useEffect, useState } from "react";
 import { config } from "../../const/constants";
 
 const URL = config.api_url
-// playlist js
-// TODO: change to oembed API for better control
-// window.onSpotifyIframeApiReady = (IFrameAPI) => {
-//     const element = document.getElementById('embed-iframe');
-//     var options = {
-//         width: '100%',
-//         //height: //screen size dependent
-//         uri: playlist
-//         //uri: 'spotify:playlist:0C9kHKFfpDWTmoIlr6SdxI'
-//     };
-//     const callback = (EmbedController) => {
-//         // add click handler to fetch for playlist data and update controller
-//         document.getElementById('dig').addEventListener('click', async () => {
-//             await res();
-//             EmbedController.loadUri(playlist)
-//             element.style.display = 'block'
-//             document.getElementById('progress-container').style.display = 'none'
-//             EmbedController.play()
-//         })
-//     };
-//     IFrameAPI.createController(element, options, callback);
-// };
-
-// animate digging
 
 export default function Dig(props) {
 	const [playlist, setPlaylist] = useState('')
@@ -74,7 +50,9 @@ export default function Dig(props) {
 		  .then((data) => {
 			setPlaylist(data.playlist)
 			setTracks(data.tracks)
-			getOembed(parseUrl(playlist))
+			if (tracks) {
+			    getOembed(parseUrl(playlist))
+		       	}
 		  })
 		  .catch(error => {
 			
@@ -86,10 +64,13 @@ export default function Dig(props) {
 		.then((response) => response.json())
 		.then((result) => {
 			if (result.error) {
-				console.log('Error:', result.error);
-				return false;
+			    console.log('Error:', result.error);
+			    return false;
 			}
 			setOEmbed(result);
+			if (!oEmbed) {
+			    //show error if embed player isn't loaded	
+			}
 		})
 	}
 
@@ -104,10 +85,10 @@ export default function Dig(props) {
 			<input placeholder="enter a genre"/> */}
 			<button id="dig" href="" onClick={res}>&lt;dig&gt;</button>
 			{ showLoad ?  <div id="progress-container">
-				<div id="messages">
-					<pre id="progress-message">digging...</pre>
-				</div>
-				<progress id="progress-bar" value="0" max="100"></progress>
+			    <div id="messages">
+				<pre id="progress-message">digging...</pre>
+			    </div>
+			    <progress id="progress-bar" value="0" max="100"></progress>
 			</div> : null }
 			{/* <div className="song-player"></div> */}
 			{ !showLoad ? <div id="embed-iframe" className="playlist-player"></div> : null }
