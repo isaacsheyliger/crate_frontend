@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
-import { config } from '../../const/constants'
+import { config } from '../../const/constants';
 import AlbumCard from "./albumcard";
-import article_data from './album-data.json'
 
 const URL = config.blog_api
 
