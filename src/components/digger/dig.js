@@ -9,10 +9,6 @@ export default function Dig(props) {
 	const [oEmbed, setOEmbed] = useState({})
 	const [showLoad, setShowLoad] = useState(false)
 
-	const showLoadOnClick = useCallback(() => {
-		setShowLoad(!showLoad)
-	}, [showLoad])
-
 	const logout = async () => {
 		await fetch(`${URL}/logout/`)
 	}
@@ -25,6 +21,25 @@ export default function Dig(props) {
 		params = params.replaceAll('/', '%2F');
 		return params;
 	}
+	
+	const showLoadOnClick = useCallback(() => {
+		setShowLoad(!showLoad)
+	}, [showLoad])
+
+	const getOembed = useCallback(async (params) => {
+		await fetch(`https://open.spotify.com/oembed?url=${params}`)
+		.then((response) => response.json())
+		.then((result) => {
+			if (result.error) {
+			    console.log('Error:', result.error);
+			    return false;
+			}
+			setOEmbed(result);
+			if (!oEmbed) {
+			    //show error if embed player isn't loaded	
+			}
+		})
+	}, [oEmbed])
 
 	// fetch data from backend
 	const res = useEffect(() => {
@@ -50,29 +65,12 @@ export default function Dig(props) {
 		  .then((data) => {
 			setPlaylist(data.playlist)
 			setTracks(data.tracks)
-			if (tracks) {
-			    getOembed(parseUrl(playlist))
-		       	}
+		        getOembed(parseUrl(playlist))
 		  })
 		  .catch(error => {
 			
 		  })
-	}, [playlist, showLoadOnClick])
-	
-	const getOembed = async (params) => {
-		await fetch(`https://open.spotify.com/oembed?url=${params}`)
-		.then((response) => response.json())
-		.then((result) => {
-			if (result.error) {
-			    console.log('Error:', result.error);
-			    return false;
-			}
-			setOEmbed(result);
-			if (!oEmbed) {
-			    //show error if embed player isn't loaded	
-			}
-		})
-	}
+	}, [playlist, showLoadOnClick, getOembed])
 
 	return(
 		<div className="container">
@@ -91,7 +89,7 @@ export default function Dig(props) {
 			    <progress id="progress-bar" value="0" max="100"></progress>
 			</div> : null }
 			{/* <div className="song-player"></div> */}
-			{ !showLoad ? <div id="embed-iframe" className="playlist-player"></div> : null }
+			{ !showLoad && tracks ? <div id="embed-iframe" className="playlist-player"></div> : null }
 			<script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
 		</div>
 	)
