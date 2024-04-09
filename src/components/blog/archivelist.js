@@ -12,6 +12,14 @@ function ArchiveList(props) {
 	fetch(`${URL}/blog/articles/`, {
             method: 'GET',
         })
+	.then(response => response.json());
+	.then((result) => {
+	    if (result.error) {
+  	        console.log('Error: ', result.error);
+		return false;
+	    }
+	    setArticles(result);
+	});
     };
 
     useEffect(() => {
