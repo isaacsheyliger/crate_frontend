@@ -13,7 +13,7 @@ import Error from './components/error.js';
 // Route to blog automatically
 let url = window.location.href;
 
-if (url.indexOf('#') == -1) {
+if (url.indexOf('#') === -1) {
   url += '#/blog/'
 }
 
