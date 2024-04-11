@@ -83,7 +83,7 @@ export default function Carousel(props) {
 
     var articleList;
 
-    if (windowSize.width > 768) {
+    if (windowSize[0] > 768) {
         articleList = articles.map((article, index) => 
             <div 
             key={index} 
