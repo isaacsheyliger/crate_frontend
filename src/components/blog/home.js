@@ -7,8 +7,8 @@ function Home(props) {
         <div id="home-body" className="body home-body">
             <section className="hero">
                 <Carousel />
-                <h1 className="header">&lt;featured.playlist&gt;</h1>
-                <EmbedPlayer className="featured"/>
+	    {/*    <h1 className="header">&lt;featured.playlist&gt;</h1>
+	    <EmbedPlayer className="featured"/> */}
             </section>
         </div>
     )
