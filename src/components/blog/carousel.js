@@ -84,7 +84,7 @@ export default function Carousel(props) {
     var articleList;
 
     if (windowSize[0] > 768) {
-        articleList = articles.map((article, index) => 
+        articleList = articles.slice(-10).map((article, index) => 
             <div 
             key={index} 
             id={`col-${index}`}
