@@ -8,7 +8,7 @@ function Nav(props) {
         <nav className="navbar is-fixed-top is-black" role="navigation" aria-label="main navigation">
             <div className="navbar-brand" style={{alignItems: 'center'}}>
                 <NavLink to={"/"} id="tl-link" className="nav-link" style={{height: 'fit-content'}}>
-                    <img id='tl-img' alt="crate logo" src="/static/img/crate_logo_grn.png" width="52"></img>
+                    <img id='tl-img' alt="crate logo" src="/static/img/crate_logo_alt128.webp" width="52"></img>
                     &lt;crate.digital&gt;
                 </NavLink>
             </div>
