@@ -1,5 +1,5 @@
 import React from "react";
-import EmbedPlayer from "./embed";
+// import EmbedPlayer from "./embed";
 import Carousel from "./carousel";
 
 function Home(props) {
