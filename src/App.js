@@ -25,10 +25,10 @@ function App(props) {
         <Nav />
         <Routes>
               {/* blog routes */}
-              <Route exact path='/blog/' element={<Home />} />
-              <Route exact path='/blog/archive' element={<ArchiveList />} />
-              <Route exact path='/blog/articles/:title' element={<Article />} />
-              <Route path='/blog/*' element={<Error code={404} />}/>
+              <Route exact path='/' element={<Home />} />
+              <Route exact path='/archive' element={<ArchiveList />} />
+              <Route exact path='/articles/:id/:title' element={<Article />} />
+              <Route path='/*' element={<Error code={404} />}/>
               {/* dig routes */}
               <Route exact path='/dig/' element={<Navigate to='/dig/login' />} />
               <Route exact path='/dig/login/' element={<Login />} />
