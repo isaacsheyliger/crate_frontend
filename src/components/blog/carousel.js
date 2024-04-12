@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { config } from "../../util/constants";
 import { useWindowSize } from "../../util/util"
 import AlbumCard from "./albumcard";

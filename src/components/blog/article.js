@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { config } from "../../util/constants";
 import EmbedPlayer from "./embed";
 import DOMPurify from "dompurify";
 
 const URL = config.blog_api
-
 
 function Article(props) {
     let params = useParams();
@@ -27,7 +26,7 @@ function Article(props) {
             }
             setArticle(result);
         });
-    }, []);
+    }, [id]);
     
     const date = article.updated_date > article.created_date ? `Updated: ${article.updated_date}` : `Created: ${article.created_date}`
     const author = article.author_name;
