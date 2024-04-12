@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { config } from "../../const/constants";
+import { config } from "../../util/constants";
 
 const URL = config.api_url
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { config } from "../../const/constants";
+import { config } from "../../util/constants";
 
 const API_URL = config.api_url
 const URL = config.url

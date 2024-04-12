@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { config } from '../../const/constants';
+import { config } from '../../util/constants';
 import AlbumCard from "./albumcard";
 
 const URL = config.blog_api

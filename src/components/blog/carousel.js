@@ -1,21 +1,9 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
-import { config } from '../../const/constants';
+import { config } from "../../util/constants";
+import { useWindowSize } from "../../util/util"
 import AlbumCard from "./albumcard";
 
 const URL = config.blog_api
-
-function useWindowSize() {
-    const [size, setSize] = useState([0, 0]);
-    useLayoutEffect(() => {
-      function updateSize() {
-        setSize([window.innerWidth, window.innerHeight]);
-      }
-      window.addEventListener('resize', updateSize);
-      updateSize();
-      return () => window.removeEventListener('resize', updateSize);
-    }, []);
-    return size;
-}
 
 export default function Carousel(props) {
     const [currentIndex, setCurrentIndex] = useState(0);
