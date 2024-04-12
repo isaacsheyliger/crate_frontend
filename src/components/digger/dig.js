@@ -74,6 +74,7 @@ export default function Dig(props) {
 
 	return(
 		<div className="container">
+			<h1>&lt;Find your new favorites&gt;</h1>
 			<button id="logout" onClick={logout}>Log Out</button>
 			{/* on 1st dig, get 25, if not added, 
 			on next dig remove and add new to 25, move to next in list

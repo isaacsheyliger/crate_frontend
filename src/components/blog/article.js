@@ -17,7 +17,8 @@ function Article(props) {
 
     return(
         <div id="article-body" className="body container is-halfheight">
-            <section className="hero art-hero">
+            <h1 className="is-hidden">{title}</h1>
+	    <section className="hero art-hero">
                 <div className="hero-body article-header">
                     <div className="columns is-multiline">
                         <div className="column is-one-half">

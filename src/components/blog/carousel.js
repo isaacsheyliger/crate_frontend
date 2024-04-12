@@ -116,7 +116,6 @@ export default function Carousel(props) {
 
     return(
         <div style={{width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-            <h1 className="header hero-header">&lt;recent.articles&gt;</h1>
             <div className="hero-body home-hero">
                 <ul className="article-list">
                     {articleList}
