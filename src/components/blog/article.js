@@ -11,7 +11,7 @@ function Article(props) {
     const [article, setArticle] = useState({});
     
     const id = params.id;
-    const title = params.title;
+    let title = params.title;
     const htmlTitle = title + " | crate.digital";
    
     useEffect(() => {
@@ -28,6 +28,7 @@ function Article(props) {
         });
     }, [id]);
     
+    title = article.title;
     const date = article.updated_date > article.created_date ? `Updated: ${article.updated_date}` : `Created: ${article.created_date}`
     const author = article.author_name;
     const cover = article.cover_img;
