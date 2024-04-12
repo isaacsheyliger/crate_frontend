@@ -14,7 +14,7 @@ import Error from './components/error.js';
 let url = window.location.href;
 
 if (url.indexOf('#') === -1) {
-  url += '#/blog/'
+  url += '#/'
 }
 
 window.location.href = url;
