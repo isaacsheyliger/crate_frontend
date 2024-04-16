@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { config } from '../../util/constants';
+import { useWindowSize } from "../../util/util";
 import AlbumCard from "./albumcard";
 
 const URL = config.blog_api
 
 function ArchiveList(props) {
+    const size = useWindowSize();
     const [articles, setArticles] = useState([]);
 
     // TODO: replace article fetch with json data from file for static page
@@ -26,9 +28,17 @@ function ArchiveList(props) {
         FetchArticle();
     }, []);
 
-    const articleList = articles.map(article => 
-        <AlbumCard key={article.id} article={article} orientation="vertical" width="200"/>
-    );
+    var articleList;
+
+    if (size[0] > 768) {
+        articleList = articles.map(article => 
+            <AlbumCard key={article.id} article={article} orientation="horizontal" width={200}/>
+        );
+    } else {
+        articleList = articles.map(article => 
+            <AlbumCard key={article.id} article={article} orientation="card" width={200}/>
+        );
+    }
     // retrieve list of all articles, sort, return list items
     return(
          <div id="archive-body" className="body archive-body">

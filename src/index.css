@@ -201,9 +201,6 @@ a:hover {
 }
 
 .media-card {
-  justify-content: center;
-  background-repeat: no-repeat;
-  background-position: center;
   box-shadow: -1.5px 3.5px 10px 5px #0a0a0a;
   width: 100%;
 }
