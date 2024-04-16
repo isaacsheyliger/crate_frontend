@@ -49,8 +49,7 @@ function Nav(props) {
 	return (
 	    <nav className={ showNav ? "navbar is-fixed-top is-black is-flex is-flex-direction-column is-align-items-center" : "navbar is-fixed-top is-black is-flex" } role="navigation" aria-label="main navigation">
 	        <div className="navbar-brand" style={{width: '100%', justifyContent: 'center', alignItems: 'center'}}>
-		    <a 
-		    role="button" 
+		    <button 
 		    className={ showNav ? "navbar-burger is-active mr-auto ml-0" : "navbar-burger mr-auto ml-0" } 
 		    onClick={toggleNav} 
 		    aria-label="menu" 
@@ -60,7 +59,7 @@ function Nav(props) {
       		        <span aria-hidden="true"></span>
       		        <span aria-hidden="true"></span>
       		        <span aria-hidden="true"></span>
-    		    </a>
+    		    </button>
                     <NavLink to={"/"} id="tl-link" className="nav-link mr-auto" style={{height: 'fit-content'}}>
                         <img 
 		        id='tl-img' 
@@ -69,15 +68,15 @@ function Nav(props) {
 		        src="/static/img/crate_logo_grn.png" width="52"></img>
                         &lt;crate.digital&gt;
                     </NavLink>
-		    <a 
-		    role="button" 
+		    <button
+		    href=""
 		    className={ showNav ? "navbar-burger is-invisible mr-0 ml-auto" : "navbar-burger is-invisible mr-0 ml-auto" }
 		    aria-expanded="false"
 		    >
       		        <span aria-hidden="true"></span>
       		        <span aria-hidden="true"></span>
       		        <span aria-hidden="true"></span>
-    		    </a>
+    		    </button>
                 </div>
                 <div 
 		id="nav" 
