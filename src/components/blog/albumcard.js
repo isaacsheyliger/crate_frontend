@@ -74,7 +74,7 @@ function AlbumCard({ article, orientation, width }) {
                 <article className={`media${cardClass} is-justify-content-center`} style={{width: "100%"}}>
                     <Link
 		    to={`/articles/${article.id}`}
-		    className="is-flex is-flex-direction-row pb-4"
+		    className="is-flex is-flex-direction-row"
 		    style={{width: "90%"}}
 		    element={<Article/>}
 		    >
