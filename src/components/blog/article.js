@@ -57,7 +57,7 @@ function Article(props) {
             </section>
             <section className="article-body">
                 <div className="player-wrapper">
-                    <EmbedPlayer article={article.article}/>
+                    <EmbedPlayer article={article.player}/>
                 </div>
                 <article className="media" style={{color: 'white', whiteSpace: 'pre-wrap'}}>
                     <div dangerouslySetInnerHTML={{__html: html}}>

@@ -2,10 +2,10 @@ import React from "react";
 import DOMPurify from "dompurify";
 
 function EmbedPlayer({ className=null, article=null }) {
-    var player = null
+    var player = null;
 
     if(article) {
-        const html = DOMPurify.sanitize(article.player, { ALLOWED_TAGS: ["iframe"], ADD_ATTR: ['allow', 'allowfullscreen'] })
+        const html = DOMPurify.sanitize(article, { ALLOWED_TAGS: ["iframe"], ADD_ATTR: ['allow', 'allowfullscreen'] })
         player = html
     } 
     else{
