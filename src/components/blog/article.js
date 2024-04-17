@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { config } from "../../util/constants";
+import { usePageMeta } from "../../util/util";
 import EmbedPlayer from "./embed";
 import DOMPurify from "dompurify";
 
@@ -13,7 +14,7 @@ function Article(props) {
     const id = params.id;
     let title = params.title;
     const htmlTitle = title + " | crate.digital";
-   
+
     useEffect(() => {
         fetch(`${URL}/articles/${id}`, {
             method: 'GET',
@@ -35,7 +36,12 @@ function Article(props) {
     const body = article.article_body;// Find new way to parse html text properly
 
     const html = DOMPurify.sanitize(body, { ALLOWED_TAGS: ['p']})
-
+    
+    const regex = /(<([^>]+)>)/gi;
+    const result = html.replace(regex, "").trim();
+    const description = result.split(' ').slice(0,50).join(' ');
+    usePageMeta(htmlTitle, description);
+    
     return(
         <div id="article-body" className="body container is-halfheight">
             <h1 className="is-hidden">{htmlTitle}</h1>

@@ -1,13 +1,18 @@
 import { useState } from "react";
 import { config } from "../../util/constants";
+import { usePageMeta } from "../../util/util";
 
 const API_URL = config.api_url
 const URL = config.url
 
 export default function Login(props) {
     const [auth, setAuth] = useState(false);
-	const [showLoad, setShowLoad] = useState(false)
+    const [showLoad, setShowLoad] = useState(false)
 
+    const title = "Login | crate.digital";
+    const description = "Login to crate.digital with your Spotify account to access our new music discovery features.";
+    usePageMeta(title, description);
+    
     // TODO: create progress bar element
     const [progressBar, setProgressBar] = useState(0)
     const [progressMessage, setProgressMessage] = useState('')
