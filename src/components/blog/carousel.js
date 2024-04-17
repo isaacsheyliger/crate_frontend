@@ -29,9 +29,9 @@ export default function Carousel(props) {
     }, []);
     
     var title = "Blog | crate.digital";
-    var description = "";
+    var description = "Recent Articles: ";
+    let order = 1;
     for (let index = articles.length - 1; index >= 0; index--) {
-        let order = 1;
         description += `${order}. ${articles[index].title}\n`;
         order++;
     }
