@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { config } from "../../util/constants";
+import { usePageMeta } from "../../util/util";
 
 const URL = config.api_url
 
@@ -8,6 +9,10 @@ export default function Dig(props) {
 	const [tracks, setTracks] = useState([])
 	const [oEmbed, setOEmbed] = useState({})
 	const [showLoad, setShowLoad] = useState(false)
+
+    const title = "crate.digger";
+    const description = "Enjoy a tailor-made selection of tunes perfect for any mood. Pick a genre or go with the flow!";
+    usePageMeta(title, description);
 
 	const logout = async () => {
 		await fetch(`${URL}/logout/`)

@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Nav from './components/nav.js'
 import Footer from './components/footer.js';
 import Home from "./components/blog/home.js"
@@ -11,17 +11,17 @@ import Error from './components/error.js';
 //import './static/css';
 
 // Route to blog automatically
-let url = window.location.href;
+//let url = window.location.href;
 
-if (url.indexOf('#') === -1) {
-  url += '#/'
-}
+//if (url.indexOf('#') === -1) {
+//  url += '#/'
+//}
 
-window.location.href = url;
+//window.location.href = url;
 
 function App(props) {
   return (
-    <HashRouter basename=''>
+    <BrowserRouter basename=''>
         <Nav />
         <Routes>
               {/* blog routes */}
@@ -36,7 +36,7 @@ function App(props) {
               <Route path='/dig/*' element={<Error code={404} />} />
         </Routes>
         <Footer />
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

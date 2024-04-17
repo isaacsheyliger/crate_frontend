@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { config } from "../../util/constants";
-import { useWindowSize } from "../../util/util"
+import { useWindowSize, usePageMeta } from "../../util/util"
 import AlbumCard from "./albumcard";
 
 const URL = config.blog_api
@@ -27,6 +27,15 @@ export default function Carousel(props) {
     useEffect(() => {
         FetchArticle();
     }, []);
+    
+    var title = "Blog | crate.digital";
+    var description = "";
+    for (let index = articles.length - 1; index >= 0; index--) {
+        let order = 1;
+        description += `${order}. ${articles[index].title}\n`;
+        order++;
+    }
+    usePageMeta(title, description);
 
     const getNext = () => {
         const firstElement = articles.shift();
