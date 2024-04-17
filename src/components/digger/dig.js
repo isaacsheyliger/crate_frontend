@@ -1,41 +1,13 @@
 import { useCallback, useEffect, useState } from "react";
-import { config } from "../../const/constants";
+import { config } from "../../util/constants";
 
 const URL = config.api_url
-// playlist js
-// TODO: change to oembed API for better control
-// window.onSpotifyIframeApiReady = (IFrameAPI) => {
-//     const element = document.getElementById('embed-iframe');
-//     var options = {
-//         width: '100%',
-//         //height: //screen size dependent
-//         uri: playlist
-//         //uri: 'spotify:playlist:0C9kHKFfpDWTmoIlr6SdxI'
-//     };
-//     const callback = (EmbedController) => {
-//         // add click handler to fetch for playlist data and update controller
-//         document.getElementById('dig').addEventListener('click', async () => {
-//             await res();
-//             EmbedController.loadUri(playlist)
-//             element.style.display = 'block'
-//             document.getElementById('progress-container').style.display = 'none'
-//             EmbedController.play()
-//         })
-//     };
-//     IFrameAPI.createController(element, options, callback);
-// };
-
-// animate digging
 
 export default function Dig(props) {
 	const [playlist, setPlaylist] = useState('')
 	const [tracks, setTracks] = useState([])
 	const [oEmbed, setOEmbed] = useState({})
 	const [showLoad, setShowLoad] = useState(false)
-
-	const showLoadOnClick = useCallback(() => {
-		setShowLoad(!showLoad)
-	}, [showLoad])
 
 	const logout = async () => {
 		await fetch(`${URL}/logout/`)
@@ -49,6 +21,25 @@ export default function Dig(props) {
 		params = params.replaceAll('/', '%2F');
 		return params;
 	}
+	
+	const showLoadOnClick = useCallback(() => {
+		setShowLoad(!showLoad)
+	}, [showLoad])
+
+	const getOembed = useCallback(async (params) => {
+		await fetch(`https://open.spotify.com/oembed?url=${params}`)
+		.then((response) => response.json())
+		.then((result) => {
+			if (result.error) {
+			    console.log('Error:', result.error);
+			    return false;
+			}
+			setOEmbed(result);
+			if (!oEmbed) {
+			    //show error if embed player isn't loaded	
+			}
+		})
+	}, [oEmbed])
 
 	// fetch data from backend
 	const res = useEffect(() => {
@@ -74,27 +65,16 @@ export default function Dig(props) {
 		  .then((data) => {
 			setPlaylist(data.playlist)
 			setTracks(data.tracks)
-			getOembed(parseUrl(playlist))
+		        getOembed(parseUrl(playlist))
 		  })
 		  .catch(error => {
 			
 		  })
-	}, [playlist, showLoadOnClick])
-	
-	const getOembed = async (params) => {
-		await fetch(`https://open.spotify.com/oembed?url=${params}`)
-		.then((response) => response.json())
-		.then((result) => {
-			if (result.error) {
-				console.log('Error:', result.error);
-				return false;
-			}
-			setOEmbed(result);
-		})
-	}
+	}, [playlist, showLoadOnClick, getOembed])
 
 	return(
 		<div className="container">
+			<h1>&lt;Find your new favorites&gt;</h1>
 			<button id="logout" onClick={logout}>Log Out</button>
 			{/* on 1st dig, get 25, if not added, 
 			on next dig remove and add new to 25, move to next in list
@@ -104,13 +84,13 @@ export default function Dig(props) {
 			<input placeholder="enter a genre"/> */}
 			<button id="dig" href="" onClick={res}>&lt;dig&gt;</button>
 			{ showLoad ?  <div id="progress-container">
-				<div id="messages">
-					<pre id="progress-message">digging...</pre>
-				</div>
-				<progress id="progress-bar" value="0" max="100"></progress>
+			    <div id="messages">
+				<pre id="progress-message">digging...</pre>
+			    </div>
+			    <progress id="progress-bar" value="0" max="100"></progress>
 			</div> : null }
 			{/* <div className="song-player"></div> */}
-			{ !showLoad ? <div id="embed-iframe" className="playlist-player"></div> : null }
+			{ !showLoad && tracks ? <div id="embed-iframe" className="playlist-player"></div> : null }
 			<script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
 		</div>
 	)

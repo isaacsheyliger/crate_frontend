@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { config } from "../../const/constants";
+import { config } from "../../util/constants";
 
 const API_URL = config.api_url
 const URL = config.url
@@ -63,7 +63,7 @@ export default function Login(props) {
 
     return(
         <div class="container">
-            <h4>&lt;welcome to crate.digital&gt;</h4>
+            <h1>&lt;welcome to crate.digital&gt;</h1>
             { !showLoad ? <button id="login" href="" onClick={showLoadOnClick}>
                 <pre class="caret-block">log in with Spotify<span> </span></pre>
             </button> : null}

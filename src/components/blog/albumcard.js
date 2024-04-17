@@ -5,15 +5,19 @@ import Article from "./article";
 
 function AlbumCard({ article, orientation, width }) {
     const width_px = `${width}px`
-
+    
+    const id = article.id;
     const cover = article.cover_img;
     const title = article.title;
     const author = article.author_name;
     const date = article.updated_date > article.created_date ? `Updated: ${article.updated_date}` : `Created: ${article.created_date}`
+    const tagIds = article.tags;
+    let tags = []
+    tagIds.forEach((tag) => tags.push(`#${tag.value} `))
 
     let cardClass = ' media-card';
     if (orientation === 'horizontal') {
-        cardClass += ` flex-row`
+        cardClass = ` flex-row`
     }
     if (orientation === 'vertical') {
         cardClass += ` flex-col`
@@ -24,8 +28,8 @@ function AlbumCard({ article, orientation, width }) {
     return (
         <>
             {orientation === 'card' && (
-                <article className={`media${cardClass}`} style={{backgroundImage: `url('/static/img/covers/${cover}')`, backgroundSize: width_px, maxWidth: width_px, width: width_px, height: width_px}}>
-                    <Link to={`/articles/${urlTitle}`} state={{article: article}} element={<Article/>}>
+                <article className={`media${cardClass}`} style={{backgroundImage: `url('${cover}')`, backgroundSize: width_px, maxWidth: width_px, width: width_px, height: width_px}}>
+                    <Link to={`/articles/${id}/${urlTitle}`} state={{article: article}} element={<Article/>}>
                             <div className="card" style={{width: width_px, height: width_px}}>
                                 <div className="card-content">
                                     <p className="title card-title">
@@ -46,8 +50,8 @@ function AlbumCard({ article, orientation, width }) {
             )}
             {orientation === 'vertical' && (
                 <article className={`media${cardClass}`}>
-                    <Link to={`./articles/${urlTitle}`} state={{article: article}} element={<Article/>}>
-                            <div className="card" style={{backgroundImage: `url('/static/img/covers/${cover}')`, backgroundSize: width_px, maxWidth: width_px, width: width_px, height: width_px}}>
+                    <Link to={`/articles/${id}/${urlTitle}`} state={{article: article}} element={<Article/>}>
+                            <div className="card" style={{backgroundImage: `url('${cover}')`, backgroundSize: width_px, maxWidth: width_px, width: width_px, height: width_px}}>
                             </div>
                             <div className="media-content">
                                 <p className="title media-title">
@@ -63,6 +67,39 @@ function AlbumCard({ article, orientation, width }) {
                                     {date}
                                 </p>
                             </div>
+                    </Link>
+                </article>
+            )}
+	    {orientation === 'horizontal' && (
+                <article className={`media${cardClass} is-justify-content-center`} style={{width: "100%"}}>
+                    <Link
+		    to={`/articles/${article.id}`}
+		    className="is-flex is-flex-direction-row"
+		    style={{width: "90%"}}
+		    element={<Article/>}
+		    >
+                        <div
+		     	  className="card"
+		          style={{backgroundImage: `url('${cover}')`,
+				  backgroundSize: width_px,
+				  maxWidth: width_px,
+				  width: width_px,
+			  	  height: width_px}}
+		   	 />
+                         <div className="media-content is-flex is-flex-direction-column pl-5 py-4">
+                             <p className="title media-title">
+                                 {title}
+                             </p>
+                             <p className="subtitle media-subtitle">
+                                 {author}
+                             </p>
+                             {/* <p>
+                                 artwork by: {cover_artist}
+                             </p> */}
+                             <p className="mt-auto">
+                                 {tags}
+                             </p>
+                         </div>
                     </Link>
                 </article>
             )}

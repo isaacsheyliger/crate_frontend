@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'GlassTTY';
-  src: url("http://localhost:3000/crate_frontend/public/static/fonts/Glass_TTY_VT220.ttf"),
+  src: url("/public/static/fonts/Glass_TTY_VT220.ttf"),
       url("https://heyligerjon.github.io/crate_frontend/static/fonts/Glass_TTY_VT220.ttf"),
       url("https://www.crate.digital/static/fonts/Glass_TTY_VT220.ttf");
 }
@@ -127,9 +127,7 @@ a:hover {
 }
 
 .navbar-start {
-  justify-content: space-evenly;
   width: 100%;
-  margin-right: 0;
 }
 
 .hero {
@@ -203,9 +201,6 @@ a:hover {
 }
 
 .media-card {
-  justify-content: center;
-  background-repeat: no-repeat;
-  background-position: center;
   box-shadow: -1.5px 3.5px 10px 5px #0a0a0a;
   width: 100%;
 }

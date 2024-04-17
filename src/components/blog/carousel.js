@@ -1,31 +1,27 @@
-import React, { useState, useEffect, useLayoutEffect } from "react";
-import { config } from '../../const/constants';
+import React, { useState, useEffect } from "react";
+import { config } from "../../util/constants";
+import { useWindowSize } from "../../util/util"
 import AlbumCard from "./albumcard";
 
 const URL = config.blog_api
 
-function useWindowSize() {
-    const [size, setSize] = useState([0, 0]);
-    useLayoutEffect(() => {
-      function updateSize() {
-        setSize([window.innerWidth, window.innerHeight]);
-      }
-      window.addEventListener('resize', updateSize);
-      updateSize();
-      return () => window.removeEventListener('resize', updateSize);
-    }, []);
-    return size;
-}
-
 export default function Carousel(props) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [articles, setArticles] = useState([]);
-    const [width, height] = useWindowSize();
+    const windowSize = useWindowSize();
 
     const FetchArticle = () => {        
-	fetch(`${URL}/blog/articles/`, {
+	fetch(`${URL}/articles/`, {
             method: 'GET',
         })
+	.then(response => response.json())
+	.then((result) => {
+	    if (result.error) {
+  	        console.log('Error: ', result.error);
+		return false;
+	    }
+	    setArticles(result);
+	});
     };
 
     useEffect(() => {
@@ -75,8 +71,8 @@ export default function Carousel(props) {
 
     var articleList;
 
-    if (width > 768) {
-        articleList = articles.map((article, index) => 
+    if (windowSize[0] > 768) {
+        articleList = articles.slice(-10).map((article, index) => 
             <div 
             key={index} 
             id={`col-${index}`}
@@ -108,7 +104,6 @@ export default function Carousel(props) {
 
     return(
         <div style={{width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-            <h1 className="header hero-header">&lt;recent.articles&gt;</h1>
             <div className="hero-body home-hero">
                 <ul className="article-list">
                     {articleList}
