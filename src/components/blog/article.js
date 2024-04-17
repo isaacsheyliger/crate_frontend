@@ -8,12 +8,10 @@ import DOMPurify from "dompurify";
 const URL = config.blog_api
 
 function Article(props) {
-    let params = useParams();
     const [article, setArticle] = useState({});
     
+    let params = useParams();
     const id = params.id;
-    let title = params.title;
-    const htmlTitle = title + " | crate.digital";
 
     useEffect(() => {
         fetch(`${URL}/articles/${id}`, {
@@ -29,7 +27,7 @@ function Article(props) {
         });
     }, [id]);
     
-    title = article.title;
+    const title = article.title;
     const date = article.updated_date > article.created_date ? `Updated: ${article.updated_date}` : `Created: ${article.created_date}`
     const author = article.author_name;
     const cover = article.cover_img;
@@ -37,6 +35,7 @@ function Article(props) {
 
     const html = DOMPurify.sanitize(body, { ALLOWED_TAGS: ['p']})
     
+    const htmlTitle = title + " | crate.digital";
     const regex = /(<([^>]+)>)/gi;
     const result = html.replace(regex, "").trim();
     const description = result.split(' ').slice(0,50).join(' ');
