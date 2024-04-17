@@ -73,7 +73,7 @@ function AlbumCard({ article, orientation, width }) {
 	    {orientation === 'horizontal' && (
                 <article className={`media${cardClass} is-justify-content-center`} style={{width: "100%"}}>
                     <Link
-		    to={`/articles/${article.id}`}
+		    to={`/articles/${id}/${urlTitle}`}
 		    className="is-flex is-flex-direction-row"
 		    style={{width: "90%"}}
 		    element={<Article/>}
