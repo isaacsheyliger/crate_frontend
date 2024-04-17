@@ -21,11 +21,12 @@ import Error from './components/error.js';
 
 function App(props) {
   return (
-    <BrowserRouter basename=''>
+    <BrowserRouter>
         <Nav />
         <Routes>
               {/* blog routes */}
-              <Route exact path='/' element={<Home />} />
+              <Route exact path='/' element={<Navigate to='/blog' />} />
+              <Route exact path='/blog' element={<Home />} />
               <Route exact path='/archive' element={<ArchiveList />} />
               <Route exact path='/articles/:id/:title' element={<Article />} />
               <Route path='/*' element={<Error code={404} />}/>
