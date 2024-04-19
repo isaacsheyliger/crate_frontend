@@ -9,18 +9,17 @@ function ArchiveList(props) {
     const size = useWindowSize();
     const [articles, setArticles] = useState([]);
 
-    // TODO: replace article fetch with json data from file for static page
     const FetchArticle = () => {
-	fetch(`${URL}/articles/`, {
+	fetch(`${URL}/articles/?limit=50`, {
             method: 'GET',
         })
 	.then(response => response.json())
-	.then((result) => {
-	    if (result.error) {
-  	        console.log('Error: ', result.error);
+	.then((data) => {
+	    if (data.error) {
+  	        console.log('Error: ', data.error);
 		return false;
 	    }
-	    setArticles(result);
+	    setArticles(data.results);
 	});
     };
 
@@ -38,7 +37,6 @@ function ArchiveList(props) {
     usePageMeta(title, description);
 
     var articleList;
-
     if (size[0] > 768) {
         articleList = articles.map(article => 
             <AlbumCard key={article.id} article={article} orientation="horizontal" width={200}/>
@@ -48,7 +46,7 @@ function ArchiveList(props) {
             <AlbumCard key={article.id} article={article} orientation="card" width={200}/>
         );
     }
-    // retrieve list of all articles, sort, return list items
+    
     return(
          <div id="archive-body" className="body archive-body">
             <section className="hero archive-hero is-fullheight">

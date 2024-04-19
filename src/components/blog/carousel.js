@@ -11,16 +11,16 @@ export default function Carousel(props) {
     const windowSize = useWindowSize();
 
     const FetchArticle = () => {        
-	fetch(`${URL}/articles/`, {
+	fetch(`${URL}/articles/?limit=10`, {
             method: 'GET',
         })
 	.then(response => response.json())
-	.then((result) => {
-	    if (result.error) {
-  	        console.log('Error: ', result.error);
+	.then((data) => {
+	    if (data.error) {
+  	        console.log('Error: ', data.error);
 		return false;
 	    }
-	    setArticles(result);
+	    setArticles(data.results);
 	});
     };
 
