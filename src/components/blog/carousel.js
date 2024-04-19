@@ -11,7 +11,7 @@ export default function Carousel(props) {
     const windowSize = useWindowSize();
 
     const FetchArticle = () => {        
-	fetch(`${URL}/articles/?limit=10`, {
+	fetch(`${URL}/articles`, {
             method: 'GET',
         })
 	.then(response => response.json())
@@ -20,7 +20,9 @@ export default function Carousel(props) {
   	        console.log('Error: ', data.error);
 		return false;
 	    }
-	    setArticles(data.results);
+	    data = data.slice(-10);
+		console.log(data);
+	    setArticles(data);
 	});
     };
 
@@ -81,7 +83,7 @@ export default function Carousel(props) {
     var articleList;
 
     if (windowSize[0] > 768) {
-        articleList = articles.slice(-10).map((article, index) => 
+        articleList = articles.map((article, index) => 
             <div 
             key={index} 
             id={`col-${index}`}
