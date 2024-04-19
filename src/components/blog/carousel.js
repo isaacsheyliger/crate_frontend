@@ -21,7 +21,6 @@ export default function Carousel(props) {
 		return false;
 	    }
 	    data = data.slice(-10);
-		console.log(data);
 	    setArticles(data);
 	});
     };
