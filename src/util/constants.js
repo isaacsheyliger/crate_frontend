@@ -1,7 +1,7 @@
 const production = {
     url: 'https://crate.digital',
     api: 'https://crate-labs.com/api',
-    blog_url: 'https://blog.crate.digital',
+    blog_url: 'https://crate.digital/blog',
     blog_api: 'https://crate-labs.com/blog',
 };
 

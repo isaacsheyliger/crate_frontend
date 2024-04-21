@@ -66,9 +66,7 @@ export default function Carousel(props) {
             }
         }
         name.className = 'column active'
-        //name.style.transform = `translate(${index <= currentIndex ? 0 : 75}px, ${index === currentIndex ? -5 : 0}rem`
         setCurrentIndex(index);
-        // set left of next indexes to += 150px 
     };
 
     const handleLeave = (index) => {

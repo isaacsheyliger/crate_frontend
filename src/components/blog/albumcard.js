@@ -41,7 +41,6 @@ function AlbumCard({ article, orientation, width }) {
                                 </div>
                                 <footer className="card-footer">
                                     {/* <p className="card-footer-item">
-                                        artwork by: {cover_artist.toLowerCase()}
                                     </p> */}
                                 </footer>
                             </div>
@@ -61,7 +60,6 @@ function AlbumCard({ article, orientation, width }) {
                                     {author}
                                 </p>
                                 {/* <p>
-                                    artwork by: {cover_artist}
                                 </p> */}
                                 <p>
                                     {date}
@@ -94,7 +92,6 @@ function AlbumCard({ article, orientation, width }) {
                                  {author}
                              </p>
                              {/* <p>
-                                 artwork by: {cover_artist}
                              </p> */}
                              <p className="mt-auto">
                                  {tags}

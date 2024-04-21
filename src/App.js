@@ -8,16 +8,6 @@ import Article from './components/blog/article.js';
 import Login from './components/digger/login.js';
 import Dig from './components/digger/dig.js';
 import Error from './components/error.js';
-//import './static/css';
-
-// Route to blog automatically
-//let url = window.location.href;
-
-//if (url.indexOf('#') === -1) {
-//  url += '#/'
-//}
-
-//window.location.href = url;
 
 function App(props) {
   return (

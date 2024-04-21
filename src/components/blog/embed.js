@@ -13,7 +13,6 @@ function EmbedPlayer({ className=null, article=null }) {
     }
     return(
         <div className={className + " embed-player"} dangerouslySetInnerHTML={{__html: player}}>
-            {/* {player} */}
         </div>
     )
 }
