@@ -30,11 +30,11 @@ function App(props) {
               <Route exact path='/archive' element={<ArchiveList />} />
               <Route exact path='/articles/:id/:title' element={<Article />} />
               <Route path='/*' element={<Error code={404} />}/>
-              {/* dig routes */}
+              {/* dig routes
               <Route exact path='/dig/' element={<Navigate to='/dig/login' />} />
               <Route exact path='/dig/login/' element={<Login />} />
               <Route exact path='/dig/home/' element={<Dig />} />
-              <Route path='/dig/*' element={<Error code={404} />} />
+              <Route path='/dig/*' element={<Error code={404} />} /> */}
         </Routes>
         <Footer />
     </BrowserRouter>
