@@ -5,8 +5,8 @@ import Footer from './components/footer.js';
 import Home from "./components/blog/home.js"
 import ArchiveList from './components/blog/archivelist.js';
 import Article from './components/blog/article.js';
-import Login from './components/digger/login.js';
-import Dig from './components/digger/dig.js';
+// import Login from './components/digger/login.js';
+// import Dig from './components/digger/dig.js';
 import Error from './components/error.js';
 
 function App(props) {
