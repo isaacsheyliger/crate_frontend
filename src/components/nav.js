@@ -55,30 +55,32 @@ function Nav(props) {
 		    aria-label="menu" 
 		    aria-expanded="false" 
 		    data-target="nav"
+            style={{ color: '#E1E1E1' }}
 		    >
-      		        <span aria-hidden="true"></span>
-      		        <span aria-hidden="true"></span>
-      		        <span aria-hidden="true"></span>
-    		    </button>
-                    <NavLink to={"/"} id="tl-link" className="nav-link mr-auto" style={{height: 'fit-content'}}>
-                        <img 
-		        id='tl-img' 
-			alt="crate logo" 
-			className="is-hidden-touch" 
-		        src="/static/img/crate_logo_grn.png" width="52"></img>
-                        &lt;crate.digital&gt;
-                    </NavLink>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+            <NavLink to={"/"} id="tl-link" className="nav-link mr-auto" style={{height: 'fit-content'}}>
+                <img 
+                id='tl-img' 
+                alt="crate logo" 
+                className="is-hidden-touch" 
+                src="/static/img/crate_logo_grn.png" 
+                width="52" />
+                &lt;crate.digital&gt;
+            </NavLink>
 		    <button
 		    href=""
 		    className={ showNav ? "navbar-burger is-invisible mr-0 ml-auto" : "navbar-burger is-invisible mr-0 ml-auto" }
 		    aria-expanded="false"
 		    >
-      		        <span aria-hidden="true"></span>
-      		        <span aria-hidden="true"></span>
-      		        <span aria-hidden="true"></span>
-    		    </button>
-                </div>
-                <div 
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+        </div>
+        <div 
 		id="nav" 
 		className={ showNav ? "navbar-menu is-active has-background-black ml-auto" : "navbar-menu" }
  		style={{width: '100%'}}
