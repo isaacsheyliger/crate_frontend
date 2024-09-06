@@ -1,12 +1,12 @@
 import React from "react";
 
 function Modal({ children, closeModal, modalState, title }) {
-    if (!modalState) {
-        return null;
-    }
+    // if (!modalState) {
+    //     return null;
+    // }
     
     return (
-        <dialog id="modal" className={`is-active modal sib-form`} style={{textAlign: "center"}}>
+        <dialog id="modal" className={`modal sib-form is-active` + (!modalState ? ` is-transparent` : ``)} style={{textAlign: "center"}}>
             <div className="modal-background" onClick={closeModal}></div>
             <div id="sib-form-container" className="modal-content is-flex is-align-items-center is-justify-content-center">
                 <div className="modal-image" style={{backgroundImage: "url('https://i.scdn.co/image/ab67616d0000b2739693c6031254b097be80ac55')"}}>

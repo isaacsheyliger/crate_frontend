@@ -7,6 +7,13 @@
       url("https://www.crate.digital/static/fonts/Glass_TTY_VT220.ttf");
 }
 
+.is-transparent {
+  background-color: transparent;
+  opacity: 0%;
+  visibility: hidden;
+  z-index: -1;
+}
+
 .modal {
   width: 900px;
 }
@@ -38,6 +45,10 @@ div > button:hover {
   transition: 0.25s ease-in all;
   color: #4AF626;
   border-color: #4AF626;
+}
+
+dialog {
+  transition: 0.25s ease all;
 }
 
 /* Basic Styles */
