@@ -29,11 +29,6 @@ function Footer(props) {
                   <img src="static/img/crate_logo_grn.png" width="150"></img>
                 </NavLink>
                 */}
-                <p className='footer-text' style={{ whiteSpace: 'pre-wrap' }}>
-                    &copy; 2023 Crate Digital, LLC.
-                    <br />
-                    All rights reserved.
-                </p>
                 { size[0] > 768 ? 
                 <button 
                 onClick={toggleModal} 
@@ -64,6 +59,11 @@ function Footer(props) {
                     Join our mailing list!
                 </a>
                 }
+                <p className='footer-text' style={{ whiteSpace: 'pre-wrap', paddingTop: '1.5rem' }}>
+                    &copy; 2023 Crate Digital, LLC.
+                    <br />
+                    All rights reserved.
+                </p>
             </div>
         </footer>
     )
