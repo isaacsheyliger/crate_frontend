@@ -69,7 +69,7 @@ function Modal({ children, closeModal, modalState, title }) {
                             </div>
                         </div>
                         <div style={{padding: "8px 0"}}>
-                            <div className="sib-form-block" style={{textAlign:  "left"}}>
+                            <div className="sib-form-block" style={{textAlign:  "center"}}>
                                 <button className="sib-form-block__button sib-form-block__button-with-loader" style={{fontSize: "18px", fontWeight: "700", borderRadius: "3px", borderWidth: "1px", borderColor: "#4AF626", padding: "0.5rem"}} form="sib-form" type="submit">
                                     Subscribe
                                 </button>
