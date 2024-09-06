@@ -82,7 +82,7 @@ function Modal({ children, closeModal, modalState, title }) {
                             <div className="sib-form__declaration" style={{direction: "ltr"}}>
                                 <div style={{fontSize: "14px", textAlign: "left", fontFamily: "'Helvetica', sans-serif", color: "#687484", backgroundColor: "transparent"}}>
                                     <p>
-                                        This site uses Brevo as our online marketing platform. By submitting this form you agree that the personal data you provided will be transferred to Brevo for processing in accordance with <a href="https://www.brevo.com/en/legal/privacypolicy/" target="_blank">Brevo's Privacy Policy.</a>
+                                        This site uses Brevo as our online marketing platform. By submitting this form you agree that the personal data you provided will be transferred to Brevo for processing in accordance with <a href="https://www.brevo.com/en/legal/privacypolicy/" target="_blank" rel="noopener noreferrer">Brevo's Privacy Policy.</a>
                                     </p>
                                 </div>
                             </div>
@@ -106,5 +106,3 @@ function Modal({ children, closeModal, modalState, title }) {
 }
 
 export default Modal;
-{/* <iframe className="modal-form" width="540" height="600" src="https://2f4cda99.sibforms.com/serve/MUIFAEJjpoNQFUaw0mfb097qatnkK3LmqwO45yqz0m82YiMjXrDnA4BOrC1WuJRLdom46i2QJOb-Fn0nXDN1AL3V3yA2PD2_f_fVzLXpwg1rK8wVx0A-WU7BBP00CSVCqZom_FjnFg7ajx80rDPxvJUGcP7diBlMYgpbEHbqdkhfIwv6sQ2W_EeWr41H7kKOofdeE8ZrHAmnmQ03" allowFullScreen allowTransparency="true" style={{display: "block", background: "#FFFFFF", maxWidth: "100%"}}></iframe> */}
-

@@ -13,9 +13,12 @@ function Footer(props) {
     }
 
     useEffect(() => {
-        setTimeout(() => {
+        const timeout = setTimeout(() => {
             toggleModal();
         }, 2500)
+
+        return () => {clearTimeout(timeout)}
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return(
