@@ -30,7 +30,7 @@ function Modal({ children, closeModal, modalState, title }) {
                                 <div className="form__entry entry_block">
                                     <div className="form__label-row ">
                                         <div className="entry__field">
-                                            <input className="input " type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="Enter your Email" data-required="true" required />
+                                            <input className="input " type="text" id="EMAIL" name="EMAIL" autoComplete="off" placeholder="Enter your Email" data-required="true" required />
                                         </div>
                                     </div>
 
