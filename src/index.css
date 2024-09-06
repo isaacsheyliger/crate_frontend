@@ -35,8 +35,9 @@
 }
 
 div > button:hover {
-  background-color: #4AF626;
-  color: #151515;
+  transition: 0.25s ease-in all;
+  color: #4AF626;
+  border-color: #4AF626;
 }
 
 /* Basic Styles */

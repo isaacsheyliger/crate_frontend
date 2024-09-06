@@ -12,7 +12,7 @@ function Modal({ children, closeModal, modalState, title }) {
                 <div className="modal-image" style={{backgroundImage: "url('https://i.scdn.co/image/ab67616d0000b2739693c6031254b097be80ac55')"}}>
                 </div>
                 <div id="sib-container" className="modal-form" style={{}}>
-                    <form id="sib-form" method="POST" action="https://2f4cda99.sibforms.com/serve/MUIFAE1MaN4mngNJurf6dxloVApYr4sR_L6oRcTwk5mWschVg1S27-peBQEiOmFEAuWwnQM0pc1fyCjSbIFCF8-_07yBP1ysxFI75H67JRIz62GUJ3gktlN7u1bqASJm6Vww3ACN4nh2vaumDBCrJsLO53BptZ1YG7L0_CF4YMwrTTDJGmeKP-dq95YSYiFg3hrrxxrsBOMbL8_7" data-type="subscription">
+                    <form id="sib-form" method="POST" action={"https://2f4cda99.sibforms.com/serve/MUIFAEe3-5BemfMXQzFq7jbcjN78EUsTyQu4mlKVtUk01fzLJqmuxjvJOVv6fTd7KT6sFCz6_Dw1pevE-RI2hql9g9yGJy33B7c8X26FfSo4fVvtLIpcYC_6xKKV3FQqfdkxY6tlVTgQw5vqO3Mjrjb1kp5Q-slG8-6FgYSiEAG1GaNswrsdSAiPpeHmjlN767zWhdOAxAQ80vlL"} data-type="subscription">
                         <div style={{padding: "8px 0"}}>
                             <div className="sib-form-block" style={{fontSize: "32px", fontWeight: "700", textAlign: "center"}}>
                                 <p>Subscribe to our crate!</p>
@@ -48,7 +48,7 @@ function Modal({ children, closeModal, modalState, title }) {
                                     <div className="form__label-row ">
                                         <div className="entry__choice">
                                             <label style={{display: "flex", alignItems: "center"}}>
-                                                <input type="checkbox" className="input_replaced" value="1" id="OPT_IN" name="OPT_IN" />
+                                                <input type="checkbox" className="input_replaced" defaultValue="1" id="OPT_IN" name="OPT_IN" />
                                                 <span className="checkbox checkbox_tick_positive" style={{marginRight: "16px"}}></span>
                                                 <span style={{fontSize: "14px", textAlign: "left", fontFamily: "'Helvetica', sans-serif", color: "#3C4858", backgroundColor: "transparent"}}><p>I agree to receive newsletters and accept the data privacy statement.</p></span> 
                                             </label>
@@ -70,14 +70,14 @@ function Modal({ children, closeModal, modalState, title }) {
                         </div>
                         <div style={{padding: "32px 0 0"}}>
                             <div className="sib-form-block" style={{textAlign:  "center"}}>
-                                <button className="sib-form-block__button sib-form-block__button-with-loader" style={{fontSize: "18px", fontWeight: "700", borderRadius: "3px", borderWidth: "1px", borderColor: "#4AF626", padding: "0.5rem"}} form="sib-form" type="submit">
+                                <button className="sib-form-block__button sib-form-block__button-with-loader" style={{fontSize: "18px", fontWeight: "700", borderRadius: ".25rem", borderWidth: "1px", borderColor: "#4AF626", padding: "0.5rem"}} form="sib-form" type="submit">
                                     Subscribe
                                 </button>
                             </div>
                         </div>
 
-                        <input type="text" name="email_address_check" value="" className="input--hidden" style={{display: "none"}} />
-                        <input type="hidden" name="locale" value="en" />
+                        <input type="text" name="email_address_check" value="" readOnly className="input--hidden" style={{display: "none"}} />
+                        <input type="hidden" name="locale" value="en" readOnly />
                     </form>
                 </div>
             </div>
