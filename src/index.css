@@ -26,11 +26,17 @@
 .modal-form {
   width: 60%;
   color: #e1e1e1;
+  padding: 0 2rem;
 }
 
 .sib-form {
   padding: 0;
   background-color: #151515;
+}
+
+div > button:hover {
+  background-color: #4AF626;
+  color: #151515;
 }
 
 /* Basic Styles */
@@ -60,6 +66,11 @@ input {
   background-color: #151515;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+input::placeholder {
+  /* modern browser */
+  color: #e1e1e1;
 }
 
 h1 {
