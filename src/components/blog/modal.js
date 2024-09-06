@@ -1,5 +1,24 @@
 import React from "react";
 
+const images = [
+    "https://i.scdn.co/image/ab67616d0000b2732e0d002640b3fddb89e1f08a",
+    "https://i.scdn.co/image/ab67616d0000b2739693c6031254b097be80ac55",
+    "https://i.scdn.co/image/ab67616d0000b273109ef2e64da26e471a411100",
+    "https://i.scdn.co/image/ab67616d0000b273a12696de1db31461ab0d6280",
+    "https://i.scdn.co/image/ab67616d0000b273a3873d9a6b28f0c77801478d",
+    "https://i.scdn.co/image/ab67616d0000b273e4251cf5331ad74eaaeca36e",
+    "https://i.scdn.co/image/ab67616d0000b27301e88658663c8ca9957f42f9",
+    "https://i.scdn.co/image/ab67616d0000b273abca6b34e370af95f3b926bd",
+    "https://i.scdn.co/image/ab67616d0000b273379708f157bcc5a793d705ed",
+    "https://i.scdn.co/image/ab67616d0000b273ef985ba96e76a9574cc68a30",
+    "https://i.scdn.co/image/ab67616d0000b273644e8bee316059f48217afa6",
+    "https://i.scdn.co/image/ab67616d0000b27325d8df1ea7fde5af5869595b",
+    "https://i.scdn.co/image/ab67616d0000b273b18b607a4383974563d44024",
+    "https://i.scdn.co/image/ab67616d0000b2734a6951c62cc01153fdd22052",
+];
+
+const url = images[Math.floor(Math.random() * images.length)];
+
 function Modal({ children, closeModal, modalState, title }) {
     // if (!modalState) {
     //     return null;
@@ -9,7 +28,7 @@ function Modal({ children, closeModal, modalState, title }) {
         <dialog id="modal" className={`modal sib-form is-active` + (!modalState ? ` is-transparent` : ``)} style={{textAlign: "center"}}>
             <div className="modal-background" onClick={closeModal}></div>
             <div id="sib-form-container" className="modal-content is-flex is-align-items-center is-justify-content-center">
-                <div className="modal-image" style={{backgroundImage: "url('https://i.scdn.co/image/ab67616d0000b2739693c6031254b097be80ac55')"}}>
+                <div className="modal-image" style={{backgroundImage: `url(${url})`}}>
                 </div>
                 <div id="sib-container" className="modal-form" style={{}}>
                     <form id="sib-form" method="POST" action={"https://2f4cda99.sibforms.com/serve/MUIFAEe3-5BemfMXQzFq7jbcjN78EUsTyQu4mlKVtUk01fzLJqmuxjvJOVv6fTd7KT6sFCz6_Dw1pevE-RI2hql9g9yGJy33B7c8X26FfSo4fVvtLIpcYC_6xKKV3FQqfdkxY6tlVTgQw5vqO3Mjrjb1kp5Q-slG8-6FgYSiEAG1GaNswrsdSAiPpeHmjlN767zWhdOAxAQ80vlL"} data-type="subscription">
