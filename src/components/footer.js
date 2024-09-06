@@ -1,18 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 import Modal from "./blog/modal";
+import { useWindowSize } from "../util/util";
 
 function Footer(props) {
+    const size = useWindowSize();
     const [isActive, setIsActive] = React.useState(false);
 
     const toggleModal = () => {
         setIsActive(!isActive);
     }
 
+    useEffect(() => {
+        setTimeout(() => {
+            toggleModal();
+        }, 2500)
+    }, [])
+
     return(
         <footer className="footer mt-auto">
-                <Modal closeModal={toggleModal} modalState={isActive} title="Join our mailing list!" />
+            { size[0] > 768 ? 
+            <Modal closeModal={toggleModal} modalState={isActive} title="Join our mailing list!" />
+            : null }
             <div className="content has-text-centered" style={{alignItems: 'center'}}>
                 {/*
                 <NavLink to={"/"} id="ft-link" className="ft-link nav-link">
@@ -24,6 +34,7 @@ function Footer(props) {
                     <br />
                     All rights reserved.
                 </p>
+                { size[0] > 768 ? 
                 <button 
                 onClick={toggleModal} 
                 className="button" 
@@ -37,7 +48,22 @@ function Footer(props) {
                     }}
                 >
                     Join our mailing list!
-                </button>
+                </button> :
+                <a 
+                href="https://2f4cda99.sibforms.com/serve/MUIFAEe3-5BemfMXQzFq7jbcjN78EUsTyQu4mlKVtUk01fzLJqmuxjvJOVv6fTd7KT6sFCz6_Dw1pevE-RI2hql9g9yGJy33B7c8X26FfSo4fVvtLIpcYC_6xKKV3FQqfdkxY6tlVTgQw5vqO3Mjrjb1kp5Q-slG8-6FgYSiEAG1GaNswrsdSAiPpeHmjlN767zWhdOAxAQ80vlL"
+                className="button"
+                style={{
+                    fontSize: "18px", 
+                    fontWeight: "700", 
+                    backgroundColor: "inherit",
+                    borderRadius: ".5rem", 
+                    borderWidth: "0px",  
+                    padding: "0.5rem"
+                    }}
+                >
+                    Join our mailing list!
+                </a>
+                }
             </div>
         </footer>
     )
