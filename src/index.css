@@ -250,6 +250,7 @@ a:hover {
 }
 
 .media-card {
+  border-radius: .3rem;
   box-shadow: -1.5px 3.5px 10px 5px #0a0a0a;
   width: 100%;
 }
@@ -273,6 +274,15 @@ a:hover {
   transition: all .3s ease-in;
 }
 
+.archive-card {
+  box-shadow: none;
+  border: 2px solid transparent;
+}
+
+.media:hover .archive-card{ 
+  border: 2px solid #4AF626;
+}
+
 .media-content {
   color: #e1e1e1;
   padding-top: 1rem;
@@ -291,6 +301,7 @@ a:hover {
 }
 
 .card {
+  border-radius: .3rem;
   background-color: transparent;
   color: transparent;
 }

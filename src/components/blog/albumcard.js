@@ -68,35 +68,36 @@ function AlbumCard({ article, orientation, width }) {
                     </Link>
                 </article>
             )}
-	    {orientation === 'horizontal' && (
+	        {orientation === 'horizontal' && (
                 <article className={`media${cardClass} is-justify-content-center`} style={{width: "100%"}}>
                     <Link
-		    to={`/articles/${id}/${urlTitle}`}
-		    className="is-flex is-flex-direction-row"
-		    style={{width: "90%"}}
-		    element={<Article/>}
-		    >
+                    to={`/articles/${id}/${urlTitle}`}
+                    className="is-flex is-flex-direction-row"
+                    style={{width: "90%"}}
+                    element={<Article/>}
+                    >
                         <div
-		     	  className="card"
-		          style={{backgroundImage: `url('${cover}')`,
-				  backgroundSize: width_px,
-				  maxWidth: width_px,
-				  width: width_px,
-			  	  height: width_px}}
-		   	 />
-                         <div className="media-content is-flex is-flex-direction-column pl-5 py-4">
-                             <p className="title media-title">
-                                 {title}
-                             </p>
-                             <p className="subtitle media-subtitle">
-                                 {author}
-                             </p>
-                             {/* <p>
-                             </p> */}
-                             <p className="mt-auto">
-                                 {tags}
-                             </p>
-                         </div>
+                        className="card archive-card"
+                        style={{backgroundImage: `url('${cover}')`,
+                        backgroundSize: width_px,
+                        maxWidth: width_px,
+                        width: width_px,
+                        height: width_px,
+                        marginBottom: '1.25rem'}}
+                        />
+                        <div className="media-content is-flex is-flex-direction-column pl-5 py-4">
+                            <p className="title media-title">
+                                {title}
+                            </p>
+                            <p className="subtitle media-subtitle">
+                                {author}
+                            </p>
+                            {/* <p>
+                            </p> */}
+                            <p className="mt-auto">
+                                {tags}
+                            </p>
+                        </div>
                     </Link>
                 </article>
             )}

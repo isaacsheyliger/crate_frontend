@@ -38,12 +38,16 @@ function ArchiveList(props) {
 
     var articleList;
     if (size[0] > 768) {
-        articleList = articles.map(article => 
-            <AlbumCard key={article.id} article={article} orientation="horizontal" width={200}/>
+        articleList = articles.map((article, index) => 
+            <div key={index} className="columns is-multiline">
+                <AlbumCard key={article.id} article={article} orientation="horizontal" width={200}/>
+            </div>
         );
     } else {
-        articleList = articles.map(article => 
-            <AlbumCard key={article.id} article={article} orientation="card" width={200}/>
+        articleList = articles.map((article, index) => 
+            <div key={index} className={`column`} style={{transform: 'translate(0px)'}}>
+                <AlbumCard key={article.id} article={article} orientation="card" width={200}/>
+            </div>
         );
     }
     
@@ -51,9 +55,7 @@ function ArchiveList(props) {
          <div id="archive-body" className="body archive-body">
             <section className="hero archive-hero is-fullheight">
                 <h1>&lt;archive&gt;</h1>
-                <div className="columns is-multiline">
-                    {articleList}
-                </div>
+                {articleList}
             </section>
          </div>
     )
